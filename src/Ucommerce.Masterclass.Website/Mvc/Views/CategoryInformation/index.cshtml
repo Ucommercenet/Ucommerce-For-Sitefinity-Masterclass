@@ -1,0 +1,15 @@
+﻿@model Ucommerce.Masterclass.Website.Mvc.Models.CategoryViewModel
+@{
+
+}
+
+<h1>@Model.Name</h1>
+
+@foreach (var product in Model.Products)
+{
+    <div>
+        <span>@product.Name</span>
+        <span>@product.Price</span>
+        <a href="@product.Url">View more</a>
+    </div>
+}

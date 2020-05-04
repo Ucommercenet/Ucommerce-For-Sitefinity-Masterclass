@@ -1,0 +1,32 @@
+﻿@using System.Web.Mvc.Html
+@model Ucommerce.Masterclass.Website.Mvc.Models.ShippingViewModel
+@{
+    Layout = null;
+}
+
+<form method="POST">
+    <div class="well">
+        <legend>Available shipping methods</legend>
+        @foreach (var shippingMethod in Model.AvailableShippingMethods)
+        {
+            <div>
+                @if (shippingMethod.Selected)
+                {
+                    @Html.RadioButtonFor(x => x.SelectedShippingMethodId, shippingMethod.Value, new { @checked = "checked" })
+                    <span>@shippingMethod.Text</span>
+                }
+                else
+                {
+                    @Html.RadioButtonFor(x => x.SelectedShippingMethodId, shippingMethod.Value)
+                    <span>@shippingMethod.Text</span>
+                }
+            </div>
+        }
+    </div>
+
+
+    <a href="/store/checkout/billing" class="btn btn-small">Back to Address Details</a>
+
+    <input type="submit" class="btn btn-sm btn-arrow-right pull-right" value="Continue to payment method" />
+
+</form>

@@ -1,0 +1,14 @@
+﻿@model Ucommerce.Masterclass.Website.Mvc.Models.MiniBasketModel
+@{
+    Layout = null;
+}
+
+@if (Model.HasBasket)
+{
+    <a href="/home/basket">@Model.NumberOfItemsInBasket items in cart, total: @Model.OrderTotal</a>
+}
+else
+{
+    <span>Your ShoppingCart Is Emtpy</span>
+}
+

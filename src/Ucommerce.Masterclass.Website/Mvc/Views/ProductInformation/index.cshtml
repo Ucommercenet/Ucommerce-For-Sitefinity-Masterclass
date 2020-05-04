@@ -1,0 +1,25 @@
+﻿@model Ucommerce.Masterclass.Website.Mvc.Models.ProductViewModel
+@{
+
+}
+
+<h1>@Model.Name</h1>
+
+<form method="post">
+    <input type="hidden" name="sku" value="@Model.Sku" />
+    
+    <span>@Model.Price</span>
+
+    @if (Model.Variants.Any())
+    {
+        <h2>Select variant</h2>
+        <select name="VariantSku">
+            @foreach (var variant in Model.Variants)
+            {
+                <option value="@variant.VariantSku">@variant.VariantSku</option>
+            }
+        </select>
+    }
+    
+    <input type="submit" value="Add To Basket"/>
+</form>

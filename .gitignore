@@ -1,0 +1,13 @@
+syntax: glob
+src/packages/*
+src/Ucommerce.Masterclass.BusinessLogic/bin/*
+src/Ucommerce.MasterClass.Integration/bin/*
+src/Ucommerce.Masterclass.BusinessLogic/obj/*
+src/Ucommerce.Masterclass.Website/bin/*
+src/Ucommerce.Masterclass.Website/obj/*
+src/Ucommerce.MasterClass.Integration/obj/*
+src/.vs/Ucommerce.Masterclass/v15/*
+*.user
+src/.vs/*
+.hg/
+.hgtags

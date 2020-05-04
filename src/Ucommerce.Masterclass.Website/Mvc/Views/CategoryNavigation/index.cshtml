@@ -1,0 +1,27 @@
+﻿@using Ucommerce.Masterclass.Website.Mvc.Models
+@model Ucommerce.Masterclass.Website.Mvc.Models.CategoryNavigationRenderingViewModel
+@{
+    Layout = null;
+}
+
+@helper DisplayCategories(IList<CategoryViewModel> categories)
+    {
+        <ul class="nav nav-pills nav-stacked">
+            @foreach (var category in categories)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="@category.Url">
+                        <span>@category.Name</span>
+                    </a>
+                    @DisplayCategories(category.Categories)
+                </li>
+            }
+        </ul>
+}
+@if (Model.Categories.Any())
+{
+    <div class="well sidebar-nav main-nav">
+
+        @DisplayCategories(Model.Categories)
+    </div>
+}
